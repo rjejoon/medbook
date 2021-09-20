@@ -9,58 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bcfbde4-7689-4e64-8b11-80b5f17ec8b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../medbook/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/androidTest/java/org/ualberta/medbook/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/java/org/ualberta/medbook/FirstFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/java/org/ualberta/medbook/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/java/org/ualberta/medbook/SecondFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/layout/content_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/layout/fragment_first.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/layout/fragment_second.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/menu/menu_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/values-land/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/values-w1240dp/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/values-w600dp/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/values/dimens.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/app/src/test/java/org/ualberta/medbook/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../medbook/settings.gradle" beforeDir="false" />
-    </list>
+    <list default="true" id="0bcfbde4-7689-4e64-8b11-80b5f17ec8b7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
