@@ -17,15 +17,25 @@ import ca.ualberta.jejoon_medbook.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.time.LocalDate;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
+    protected MedBook medbook;
+    protected static ArrayAdapter<Medicine> medAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        medbook = new MedBook();
+        initMedListForDebugging();      // TODO delete after debugging
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -36,13 +46,10 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        medAdapter = new ArrayAdapter<Medicine>(this, R.layout.medicine_item, medbook.getMedList());
+        ListView lv = findViewById(R.id.meds_listview);
+        lv.setAdapter(medAdapter);
+
     }
 
     @Override
@@ -72,5 +79,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    // TODO method to be erased later
+    private void initMedListForDebugging() {
+        for (int i=0; i<15; i++) {
+            medbook.addMed("Finastride" + i, LocalDate.of(2020, 8, 28), 5, DoseUnit.MG, 1);
+        }
     }
 }

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import ca.ualberta.jejoon_medbook.databinding.FragmentSecondBinding;
@@ -32,7 +33,7 @@ public class SecondFragment extends Fragment {
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
+                Navigation.findNavController(view)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
