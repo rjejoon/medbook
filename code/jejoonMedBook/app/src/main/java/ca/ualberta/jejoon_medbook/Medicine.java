@@ -1,5 +1,7 @@
 package ca.ualberta.jejoon_medbook;
 
+import androidx.annotation.NonNull;
+
 import java.time.LocalDate;
 
 public class Medicine {
@@ -58,6 +60,7 @@ public class Medicine {
         this.dailyFreq = dailyFreq;
     }
 
+    @Override
     public String toString() {
         return String.format("%s %d%s  %d daily, since %s", name, doseAmount, doseUnit, dailyFreq, dateStart);
     }

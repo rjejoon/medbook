@@ -10,11 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
-import ca.ualberta.jejoon_medbook.databinding.FragmentSecondBinding;
+import ca.ualberta.jejoon_medbook.databinding.FragmentAddmedBinding;
 
-public class SecondFragment extends Fragment {
+public class AddMedFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private FragmentAddmedBinding binding;
 
     @Override
     public View onCreateView(
@@ -22,7 +22,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentAddmedBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }

@@ -12,11 +12,11 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import ca.ualberta.jejoon_medbook.databinding.FragmentFirstBinding;
+import ca.ualberta.jejoon_medbook.databinding.FragmentMedbookBinding;
 
-public class FirstFragment extends Fragment {
+public class MedBookFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentMedbookBinding binding;
 
     private MedBook medbook;
 
@@ -26,7 +26,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentMedbookBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
