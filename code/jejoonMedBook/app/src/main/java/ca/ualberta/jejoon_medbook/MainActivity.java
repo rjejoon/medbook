@@ -8,6 +8,8 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -29,15 +31,11 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
-    protected MedBook medbook;
-    protected MedicineAdapter medAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        medbook = new MedBook();
-        initMedListForDebugging();      // TODO delete after debugging
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -48,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        medAdapter = new MedicineAdapter(this, medbook.getMedList());
-        ListView lv = findViewById(R.id.meds_listview);
-        lv.setAdapter(medAdapter);
 
     }
 
@@ -83,11 +78,4 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    // TODO method to be erased later
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private void initMedListForDebugging() {
-        for (int i=0; i<15; i++) {
-            medbook.addMed("Finastride" + i, LocalDate.of(2020, 8, 28), 5, DoseUnit.MG, 2);
-        }
-    }
 }
