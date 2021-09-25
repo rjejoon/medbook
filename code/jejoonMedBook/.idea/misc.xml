@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2572463768115942" />
         <entry key="app/src/main/res/layout/fragment_addmed.xml" value="0.22552083333333334" />
+        <entry key="app/src/main/res/layout/fragment_medbook.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/medicine_item.xml" value="0.625" />
       </map>
     </option>

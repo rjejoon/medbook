@@ -8,10 +8,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MedBook {
-    private ArrayList<Medicine> medList = new ArrayList<>();
+    private ArrayList<Medicine> medList;
 
     public MedBook() {
-
+        this.medList = new ArrayList<>();
     }
 
     public ArrayList<Medicine> getMedList() {
