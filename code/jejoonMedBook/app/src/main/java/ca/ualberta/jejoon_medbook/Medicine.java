@@ -19,8 +19,10 @@ import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class Medicine implements Serializable {
+
     private String name;
     private LocalDate dateStart;
     private int doseAmount;
@@ -40,7 +42,6 @@ public class Medicine implements Serializable {
     }
 
     public void setName(String name) {
-        // TODO upto 40 chars
         this.name = name;
     }
 
@@ -76,8 +77,10 @@ public class Medicine implements Serializable {
         this.dailyFreq = dailyFreq;
     }
 
+    @NonNull
     @Override
     public String toString() {
-        return String.format("%s %d%s  %d daily, since %s", name, doseAmount, doseUnit, dailyFreq, dateStart);
+        return String.format(Locale.ROOT,
+                      "%s %d%s  %d daily, since %s", name, doseAmount, doseUnit, dailyFreq, dateStart);
     }
 }

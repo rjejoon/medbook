@@ -6,13 +6,14 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/add_button.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2572463768115942" />
+        <entry key="app/src/main/res/layout/dropdown_doseunit_item.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/dropdown_med_item.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/edit_button.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/fragment_addmed.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/fragment_medbook.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/medicine_item.xml" value="0.625" />
         <entry key="app/src/main/res/layout/total_daily_freq.xml" value="0.14895833333333333" />
-        <entry key="app/src/main/res/menu/menu_main.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.35328572182024565" />
       </map>
     </option>
   </component>

@@ -26,21 +26,15 @@ limitations under the License.
         android:label="@string/medbook_label"
         tools:layout="@layout/fragment_medbook">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/AddMedFragment" />
-        <argument
-            android:name="newMed"
-            app:argType="ca.ualberta.jejoon_medbook.Medicine"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            android:id="@+id/action_MedBookFragment_to_MedActionFragment"
+            app:destination="@id/MedActionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/AddMedFragment"
-        android:name="ca.ualberta.jejoon_medbook.AddMedFragment"
-        android:label="@string/add_med_label"
-        tools:layout="@layout/fragment_addmed">
+        android:id="@+id/MedActionFragment"
+        android:name="ca.ualberta.jejoon_medbook.MedActionFragment"
+        android:label="@string/med_action_add_label">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_MedActionFragment_to_MedBookFragment"
             app:destination="@id/MedBookFragment" />
     </fragment>
 </navigation>
