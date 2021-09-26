@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -38,17 +40,26 @@ public class MedBookFragment extends Fragment {
             medbook = new MedBook();
         }
 
+        binding = FragmentMedbookBinding.inflate(inflater, container, false);
+        listview = binding.medsListview;
+
+        TextView totalDailyFreqTextView = (TextView) inflater.inflate(R.layout.total_daily_freq, listview, false);
+
         medAdapter = new MedicineAdapter(requireActivity(), medbook.getMedList());
+
+        if (!medbook.getMedList().isEmpty()) {
+            totalDailyFreqTextView.setText("Total daily doses: " + medbook.getTotalDailyFreq());
+            listview.addFooterView(totalDailyFreqTextView);
+        }
+
         Log.d("initFrag", medbook.getMedList().toString());
 
-        binding = FragmentMedbookBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listview = binding.medsListview;
         listview.setAdapter(medAdapter);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -82,7 +93,9 @@ public class MedBookFragment extends Fragment {
     // TODO method to be erased later
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void initMedListForDebugging() {
-        medbook.addMed("cetirizine hydrochloride", LocalDate.of(2020, 9, 25), 5, DoseUnit.MG, 1);
+        for (int i=0; i<9; i++) {
+            medbook.addMed("cetirizine hydrochloride", LocalDate.of(2020, 9, 25), 5, DoseUnit.MG, 1);
+        }
     }
 
 }

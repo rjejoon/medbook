@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/total_daily_freq_textView"
+        android:layout_height="@dimen/medicine_item_layout_height"
+        android:layout_width="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/medicine_item_primary_text_size"
+        android:textColor="@color/black"
+        android:text="Total daily doses: 3" />

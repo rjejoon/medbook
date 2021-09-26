@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/layout/fragment_addmed.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_medbook.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/medicine_item.xml" value="0.625" />
+        <entry key="app/src/main/res/layout/total_daily_freq.xml" value="0.3392210144927536" />
       </map>
     </option>
   </component>

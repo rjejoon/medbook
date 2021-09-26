@@ -28,5 +28,13 @@ public class MedBook implements Serializable {
         medList.add(med);
     }
 
+    public int getTotalDailyFreq() {
+        int total = 0;
+        for (Medicine med : medList) {
+            total += med.getDailyFreq();
+        }
+        return total;
+    }
+
 
 }
