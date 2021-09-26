@@ -50,7 +50,6 @@ public class MedicineAdapter extends ArrayAdapter<Medicine> {
                                      "%d %s everyday",
                                             med.getDailyFreq(), (med.getDailyFreq() > 1) ? "doses" : "dose");
         dailyFreq.setText(dailyFreqStr);
-        startDate.setText(String.format(Locale.ENGLISH, "since %s", med.getDateStart().format(formatter)));
 
         return view;
     }

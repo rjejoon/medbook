@@ -9,11 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/start_date"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -45,19 +42,5 @@
 
         </TextView>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/start_date"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:text="since Sep 02, 2020"
-        android:textSize="@dimen/medicine_item_secondary_text_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

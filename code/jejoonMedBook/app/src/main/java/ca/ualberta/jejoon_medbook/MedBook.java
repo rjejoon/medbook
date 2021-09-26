@@ -4,10 +4,11 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class MedBook {
+public class MedBook implements Serializable {
     private ArrayList<Medicine> medList;
 
     public MedBook() {
@@ -18,11 +19,13 @@ public class MedBook {
         return medList;
     }
 
-    public boolean addMed(String name, LocalDate dateStart, int doseAmount, DoseUnit doseUnit, int dailyFreq) {
+    public void addMed(String name, LocalDate dateStart, int doseAmount, DoseUnit doseUnit, int dailyFreq) {
         Medicine med = new Medicine(name, dateStart, doseAmount, doseUnit, dailyFreq);
         medList.add(med);
+    }
 
-        return true;
+    public void addMed(Medicine med) {
+        medList.add(med);
     }
 
 

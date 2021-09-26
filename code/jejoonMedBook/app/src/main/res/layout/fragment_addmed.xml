@@ -12,7 +12,7 @@
     tools:context=".AddMedFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/medicine_name_textField"
+        android:id="@+id/medicine_name_textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/med_name_label"
@@ -21,6 +21,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/medicine_name_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
@@ -36,9 +37,9 @@
         android:orientation="horizontal" >
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dose_amount_textField"
+            android:id="@+id/dose_amount_textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:hint="@string/dose_amount_label"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,6 +47,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dose_amount_editText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
@@ -56,42 +58,72 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/dose_unit_textField"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="130dp"
+            android:id="@+id/dose_unit_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:hint="@string/dose_unit_label"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <AutoCompleteTextView
+                android:id="@+id/dose_unit_AutoCompleteTextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/dose_unit_label"
+                android:inputType="none" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/daily_freq_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/daily_freq_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/daily_freq_editText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
                 android:lines="1"
                 android:maxLines="1"
                 android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/start_date_textField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/start_date_label" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/start_date_editText"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:lines="1"
+                android:maxLines="1"
+                android:singleLine="true" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/start_date_textField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/start_date_label" >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/start_date_editText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="date"
-            android:lines="1"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

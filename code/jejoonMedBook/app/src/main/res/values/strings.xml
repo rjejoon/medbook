@@ -5,6 +5,7 @@
     <string name="dose_amount_label">Dose amount</string>
     <string name="dose_unit_label">Dose unit</string>
     <string name="start_date_label">Enter start date</string>
+    <string name="daily_freq_label">Daily Frequency</string>
     <!-- Strings used for fragments for navigation -->
     <string name="medbook_label">MedBook</string>
     <string name="add_med_label">Add Medicine</string>

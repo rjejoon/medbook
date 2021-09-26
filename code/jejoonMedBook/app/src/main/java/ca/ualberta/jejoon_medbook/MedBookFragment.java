@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -14,10 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import java.time.LocalDate;
-import java.util.Objects;
 
 import ca.ualberta.jejoon_medbook.databinding.FragmentMedbookBinding;
 
@@ -34,6 +32,14 @@ public class MedBookFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+        Bundle args = getArguments();
+        medbook = (MedBook) (args != null ? args.getSerializable("medbook") : null);
+        if (medbook == null) {
+            medbook = new MedBook();
+        }
+
+        medAdapter = new MedicineAdapter(requireActivity(), medbook.getMedList());
+        Log.d("initFrag", medbook.getMedList().toString());
 
         binding = FragmentMedbookBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -42,27 +48,29 @@ public class MedBookFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        medbook = new MedBook();
-        initMedListForDebugging();      // TODO delete after debugging
-
-        medAdapter = new MedicineAdapter(requireActivity(), medbook.getMedList());
         listview = binding.medsListview;
         listview.setAdapter(medAdapter);
 
-        binding.addMedFab.setOnClickListener(new View.OnClickListener() {
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Medicine targetMed = medAdapter.getItem(i);
+                Bundle args = new Bundle();
+                args.putSerializable("medbook", medbook);
+                args.putInt("position", i);
                 Navigation.findNavController(view)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment, args);
             }
         });
-    }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.d("Debug", String.valueOf(medAdapter));
-        listview.setAdapter(medAdapter);
+        binding.addMedFab.setOnClickListener(v -> {
+            Bundle args = new Bundle();
+            args.putSerializable("medbook", medbook);
+            args.putInt("position", -1);        // pos: -1 indicates the destination fragment that it needs to add new medicine
+
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_FirstFragment_to_SecondFragment, args);
+        });
     }
 
     @Override
@@ -74,10 +82,7 @@ public class MedBookFragment extends Fragment {
     // TODO method to be erased later
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void initMedListForDebugging() {
-        for (int i=0; i<15; i++) {
-            medbook.addMed("Finastride" + i, LocalDate.of(2020, 8, 28), 5, DoseUnit.MG, 2);
-        }
+        medbook.addMed("cetirizine hydrochloride", LocalDate.of(2020, 9, 25), 5, DoseUnit.MG, 1);
     }
-
 
 }

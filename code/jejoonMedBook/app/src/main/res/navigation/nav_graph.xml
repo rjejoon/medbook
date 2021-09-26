@@ -13,6 +13,11 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/AddMedFragment" />
+        <argument
+            android:name="newMed"
+            app:argType="ca.ualberta.jejoon_medbook.Medicine"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/AddMedFragment"

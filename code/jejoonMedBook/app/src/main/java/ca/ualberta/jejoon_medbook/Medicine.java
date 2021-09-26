@@ -2,9 +2,10 @@ package ca.ualberta.jejoon_medbook;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Medicine {
+public class Medicine implements Serializable {
     private String name;
     private LocalDate dateStart;
     private int doseAmount;
