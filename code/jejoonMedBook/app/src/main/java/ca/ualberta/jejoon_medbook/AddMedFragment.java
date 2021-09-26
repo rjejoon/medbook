@@ -178,6 +178,16 @@ public class AddMedFragment extends Fragment {
                 // navigate back to MedBookFragment
                 Navigation.findNavController(view).navigate(R.id.action_SecondFragment_to_FirstFragment, args);
             });
+
+            deleteBtn.setOnClickListener(v -> {
+                medbook.getMedList().remove(targetPos);
+
+                Bundle args = new Bundle();
+                args.putSerializable("medbook", medbook);
+
+                // navigate back to MedBookFragment
+                Navigation.findNavController(view).navigate(R.id.action_SecondFragment_to_FirstFragment, args);
+            });
         }
     }
 
