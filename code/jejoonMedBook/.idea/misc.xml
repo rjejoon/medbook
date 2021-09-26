@@ -4,18 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22552083333333334" />
-        <entry key="app/src/main/res/layout/add_button.xml" value="0.3432971014492754" />
+        <entry key="app/src/main/res/layout/add_button.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2572463768115942" />
-        <entry key="app/src/main/res/layout/dropdown_med_item.xml" value="0.22552083333333334" />
-        <entry key="app/src/main/res/layout/edit_button.xml" value="0.3432971014492754" />
-        <entry key="app/src/main/res/layout/fragment_addmed.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/dropdown_med_item.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/edit_button.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/fragment_addmed.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/fragment_medbook.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/medicine_item.xml" value="0.625" />
-        <entry key="app/src/main/res/layout/total_daily_freq.xml" value="0.3392210144927536" />
+        <entry key="app/src/main/res/layout/total_daily_freq.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.14895833333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
