@@ -16,11 +16,18 @@ limitations under the License.
 <resources>
     <string name="app_name">jejoon-MedBook</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Strings used for med edittext inputs -->
     <string name="med_name_label">Medicine name</string>
     <string name="dose_amount_label">Dose amount</string>
     <string name="dose_unit_label">Dose unit</string>
     <string name="start_date_label">Enter start date</string>
     <string name="daily_freq_label">Daily Frequency</string>
+
+    <!-- Strings used for button lobles -->
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="confirm">Confirm</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="medbook_label">MedBook</string>
@@ -29,4 +36,5 @@ limitations under the License.
 
     <!-- Error msgs -->
     <string name="null_error_msg">required</string>
+    <string name="date_parse_error_msg">yyyy-mm-dd</string>
 </resources>

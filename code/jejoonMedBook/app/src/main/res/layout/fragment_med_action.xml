@@ -26,6 +26,7 @@ limitations under the License.
     android:gravity="center"
     tools:context=".MedActionFragment">
 
+    <!-- med name input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/medicine_name_textInputLayout"
         android:layout_width="match_parent"
@@ -52,6 +53,7 @@ limitations under the License.
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
+        <!-- dose amount input -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/dose_amount_textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -74,6 +76,7 @@ limitations under the License.
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- dose unit input -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/dose_unit_textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -100,6 +103,7 @@ limitations under the License.
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
+        <!-- daily frequency input -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/daily_freq_textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -122,6 +126,7 @@ limitations under the License.
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- date start input -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/start_date_textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

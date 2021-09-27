@@ -24,7 +24,7 @@ limitations under the License.
         android:id="@+id/delete_button"
         android:layout_width="160dp"
         android:layout_height="match_parent"
-        android:text="Delete"
+        android:text="@string/delete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -34,7 +34,7 @@ limitations under the License.
         android:id="@+id/edit_confirm_button"
         android:layout_width="160dp"
         android:layout_height="match_parent"
-        android:text="Confirm"
+        android:text="@string/confirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

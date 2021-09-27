@@ -21,4 +21,4 @@ limitations under the License.
     android:textColor="@color/black"
     android:padding="14dp"
     android:layout_height="wrap_content"
-    android:text="TextView" />
+    android:text="MG" />

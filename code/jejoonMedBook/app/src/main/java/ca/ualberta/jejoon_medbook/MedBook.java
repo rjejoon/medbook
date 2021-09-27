@@ -31,11 +31,6 @@ public class MedBook implements Serializable {
         return medList;
     }
 
-    public void addMed(String name, LocalDate dateStart, int doseAmount, DoseUnit doseUnit, int dailyFreq) {
-        Medicine med = new Medicine(name, dateStart, doseAmount, doseUnit, dailyFreq);
-        addMed(med);
-    }
-
     public void addMed(Medicine med) {
         medList.add(med);
     }

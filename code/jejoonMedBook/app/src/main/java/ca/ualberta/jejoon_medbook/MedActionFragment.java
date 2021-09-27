@@ -254,7 +254,7 @@ public class MedActionFragment extends Fragment {
         }
 
         // date parse error
-        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        final SimpleDateFormat sdf = new SimpleDateFormat(getString(R.string.date_parse_error_msg));
         try {
             sdf.parse(binding.startDateEditText.getText().toString());
             // strict mode - check 30 or 31 days, leap year

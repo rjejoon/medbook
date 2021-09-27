@@ -18,6 +18,6 @@ limitations under the License.
     android:id="@+id/add_med_button"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Add" >
+    android:text="@string/add" >
 
 </Button>
