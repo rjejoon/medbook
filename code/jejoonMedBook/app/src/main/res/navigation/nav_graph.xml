@@ -31,8 +31,7 @@ limitations under the License.
     </fragment>
     <fragment
         android:id="@+id/MedActionFragment"
-        android:name="ca.ualberta.jejoon_medbook.MedActionFragment"
-        android:label="@string/med_action_add_label">
+        android:name="ca.ualberta.jejoon_medbook.MedActionFragment">
         <action
             android:id="@+id/action_MedActionFragment_to_MedBookFragment"
             app:destination="@id/MedBookFragment" />

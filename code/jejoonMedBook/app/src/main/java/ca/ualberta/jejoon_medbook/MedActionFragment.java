@@ -17,37 +17,26 @@ package ca.ualberta.jejoon_medbook;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.datepicker.MaterialDatePicker;
-import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Date;
+import java.util.Locale;
 
 import ca.ualberta.jejoon_medbook.databinding.FragmentMedActionBinding;
 
@@ -102,7 +91,7 @@ public class MedActionFragment extends Fragment {
 
         // inflate DoseUnit enum dropdown
         String[] doseUnits = Arrays.stream(DoseUnit.values()).map(DoseUnit::toString).toArray(String[]::new);
-        ArrayAdapter<String> doseUnitAdapter = new ArrayAdapter<String>(requireActivity(), R.layout.dropdown_doseunit_item, doseUnits);
+        ArrayAdapter<String> doseUnitAdapter = new ArrayAdapter<>(requireActivity(), R.layout.dropdown_doseunit_item, doseUnits);
         binding.doseUnitAutoCompleteTextview.setAdapter(doseUnitAdapter);
 
         return binding.getRoot();
@@ -120,19 +109,15 @@ public class MedActionFragment extends Fragment {
                 .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
                 .build();
 
-        datePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
-
-            @Override
-            public void onPositiveButtonClick(Object selection) {
-                String selectedDateStr = datePicker.getHeaderText();
-                SimpleDateFormat fromDatePicker = new SimpleDateFormat("MMM dd, yyyy");
-                SimpleDateFormat toUser = new SimpleDateFormat("yyyy-MM-dd");
-                try {
-                    String stringDate = toUser.format(fromDatePicker.parse(selectedDateStr));
-                    dateEditText.setText(stringDate);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+        datePicker.addOnPositiveButtonClickListener(selection -> {
+            String selectedDateStr = datePicker.getHeaderText();
+            SimpleDateFormat fromDatePicker = new SimpleDateFormat("MMM dd, yyyy", Locale.ROOT);
+            SimpleDateFormat toUser = new SimpleDateFormat("yyyy-MM-dd", Locale.ROOT);
+            try {
+                String stringDate = toUser.format(fromDatePicker.parse(selectedDateStr));
+                dateEditText.setText(stringDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
         });
 
@@ -147,35 +132,38 @@ public class MedActionFragment extends Fragment {
         });
 
         if (mode == ADD_MODE) {
-            addBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            // set title bar
+            ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.med_action_add_label);
 
-                    if (!areInputsValid()) {
-                        return;
-                    }
-                    clearErrors();
+            addBtn.setOnClickListener(v -> {
 
-                    // extract medicine info from user
-                    String medName = String.valueOf(binding.medicineNameEditText.getText());
-                    LocalDate startDate = LocalDate.parse(binding.startDateEditText.getText().toString());
-                    int doseAmount = Integer.parseInt(binding.doseAmountEditText.getText().toString());
-                    DoseUnit doseUnit = DoseUnit.valueOf(binding.doseUnitAutoCompleteTextview.getText().toString().toUpperCase());
-                    int dailyFreq = Integer.parseInt(binding.dailyFreqEditText.getText().toString());
-
-                    Medicine newMed = new Medicine(medName, startDate, doseAmount, doseUnit, dailyFreq);
-                    medbook.addMed(newMed);
-
-                    // send MedBook to destination fragment
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("medbook", medbook);
-
-                    // navigate back to MedBookFragment
-                    Navigation.findNavController(view).navigate(R.id.action_MedActionFragment_to_MedBookFragment, bundle);
+                if (!areInputsValid()) {
+                    return;
                 }
+                clearErrors();
+
+                // extract medicine info from user
+                String medName = String.valueOf(binding.medicineNameEditText.getText());
+                LocalDate startDate = LocalDate.parse(binding.startDateEditText.getText().toString());
+                int doseAmount = Integer.parseInt(binding.doseAmountEditText.getText().toString());
+                DoseUnit doseUnit = DoseUnit.valueOf(binding.doseUnitAutoCompleteTextview.getText().toString().toUpperCase());
+                int dailyFreq = Integer.parseInt(binding.dailyFreqEditText.getText().toString());
+
+                Medicine newMed = new Medicine(medName, startDate, doseAmount, doseUnit, dailyFreq);
+                medbook.addMed(newMed);
+
+                // send MedBook to destination fragment
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("medbook", medbook);
+
+                // navigate back to MedBookFragment
+                Navigation.findNavController(v).navigate(R.id.action_MedActionFragment_to_MedBookFragment, bundle);
             });
         }
         if (mode == EDIT_MODE) {
+            // set title bar
+            ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.med_action_edit_label);
+
             // set texts with targeted Medicine info
             binding.medicineNameEditText.setText(targetMed.getName());
             binding.startDateEditText.setText(targetMed.getDateStart().toString());

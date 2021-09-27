@@ -19,13 +19,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import java.util.Locale;
 
 import ca.ualberta.jejoon_medbook.databinding.FragmentMedbookBinding;
 
@@ -57,7 +58,7 @@ public class MedBookFragment extends Fragment {
         if (!medbook.getMedList().isEmpty()) {
             // include total daily freq view only if there is at least one medicine in the list
             TextView totalDailyFreqTextView = (TextView) inflater.inflate(R.layout.total_daily_freq, medsListView, false);
-            totalDailyFreqTextView.setText("Total daily doses: " + medbook.getTotalDailyFreq());
+            totalDailyFreqTextView.setText(String.format(Locale.ROOT, "Total daily doses: %d", medbook.getTotalDailyFreq()));
             medsListView.addFooterView(totalDailyFreqTextView);
         }
 
@@ -70,15 +71,12 @@ public class MedBookFragment extends Fragment {
         medsListView.setAdapter(medAdapter);
 
         // edit & delete
-        medsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Bundle args = new Bundle();
-                args.putSerializable("medbook", medbook);
-                args.putInt("position", i);
-                Navigation.findNavController(view)
-                        .navigate(R.id.action_MedBookFragment_to_MedActionFragment, args);       // navigate to MedActionFragment
-            }
+        medsListView.setOnItemClickListener((adapterView, v, pos, l) -> {
+            Bundle args = new Bundle();
+            args.putSerializable("medbook", medbook);
+            args.putInt("position", pos);
+            Navigation.findNavController(v)
+                    .navigate(R.id.action_MedBookFragment_to_MedActionFragment, args);       // navigate to MedActionFragment
         });
 
         // add
