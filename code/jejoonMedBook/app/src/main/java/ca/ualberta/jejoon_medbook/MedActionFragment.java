@@ -40,6 +40,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -149,7 +150,11 @@ public class MedActionFragment extends Fragment {
             addBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // TODO input validations
+
+                    if (!areInputsValid()) {
+                        return;
+                    }
+                    clearErrors();
 
                     // extract medicine info from user
                     String medName = String.valueOf(binding.medicineNameEditText.getText());
@@ -179,7 +184,11 @@ public class MedActionFragment extends Fragment {
             binding.dailyFreqEditText.setText(Integer.toString(targetMed.getDailyFreq()));
 
             editConfirmBtn.setOnClickListener(v -> {
-                // TODO input validations
+
+                if (!areInputsValid()) {
+                    return;
+                }
+                clearErrors();
 
                 // extract medicine info from user
                 String medName = String.valueOf(binding.medicineNameEditText.getText());
@@ -220,5 +229,49 @@ public class MedActionFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public boolean areInputsValid() {
+
+        clearErrors();
+
+        boolean valid = true;
+        // null errors
+        if (binding.medicineNameEditText.getText().toString().equals("")) {
+            valid = false;
+            binding.medicineNameTextInputLayout.setError(getString(R.string.null_error_msg));
+        }
+        if (binding.doseAmountEditText.getText().toString().equals("")) {
+            valid = false;
+            binding.doseAmountTextInputLayout.setError(getString((R.string.null_error_msg)));
+        }
+        if (binding.doseUnitAutoCompleteTextview.getText().toString().equals("Dose unit")) {
+            valid = false;
+        }
+        if (binding.dailyFreqEditText.getText().toString().equals("")) {
+            valid = false;
+            binding.dailyFreqTextInputLayout.setError(getString((R.string.null_error_msg)));
+        }
+
+        // date parse error
+        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            sdf.parse(binding.startDateEditText.getText().toString());
+            // strict mode - check 30 or 31 days, leap year
+            sdf.setLenient(false);
+        } catch (ParseException e) {
+            valid = false;
+            binding.startDateTextInputLayout.setError("yyyy-mm-dd");
+        }
+
+        return valid;
+    }
+
+    public void clearErrors() {
+        binding.medicineNameTextInputLayout.setError(null);
+        binding.doseAmountTextInputLayout.setError(null);
+        binding.dailyFreqTextInputLayout.setError(null);
+        binding.startDateTextInputLayout.setError(null);
+
     }
 }

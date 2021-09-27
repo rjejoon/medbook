@@ -26,4 +26,7 @@ limitations under the License.
     <string name="medbook_label">MedBook</string>
     <string name="med_action_add_label">Add Medicine</string>
     <string name="med_action_edit_label">Edit Medicine</string>
+
+    <!-- Error msgs -->
+    <string name="null_error_msg">required</string>
 </resources>
